@@ -51,7 +51,7 @@ void insertRow(int arr[], int a[SIZE][SIZE],int rowIndex, int m, int n){
 	//Your codes here
 	for(int i=m-1;i>=rowIndex;i=i-1){
 		for(int j=0;j<=n-1;j++){
-			a[i][j]=a[i+1][j];
+			a[i+1][j]=a[i][j];
 		}
 	}
 	for(int i=0;i<=n-1;i++){
@@ -113,6 +113,7 @@ int main(int argc, char *argv[]) {
 		}
 		Array2Dconverter(testcase,a,row,col);
 		insertRow(in_row,a,loc,row,col);
+		printArray(a,row+1,col);
 	}
 	else if(choice == 3){
 		int in_col[row],r;
@@ -130,6 +131,5 @@ int main(int argc, char *argv[]) {
 	}
 	else
 		printf("Invalid option!");
-	printArray(a,row,col);
 	return 0;
 }
