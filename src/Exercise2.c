@@ -52,7 +52,35 @@ void printArray(int a[SIZE][SIZE], int m, int n)
 void Ex2(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
-	for(int i=0;i<=)
+	//Your codes here
+	int doicho;
+	for(int i=0;i<=n-1;i++){
+		if (i%2==0)
+		{
+			for(int j=0;j<=m-2;j++){
+				for(int k=j+1;k<=m-1;k++)
+					if(arr[j][i]<=arr[k][i]){
+						doicho=arr[j][i];
+						arr[j][i]=arr[k][i];
+						arr[k][i]=doicho;
+
+			}
+			}
+		}
+		else
+		{
+			for(int j=0;j<=m-2;j++){
+				for(int k=j+1;k<=m-1;k++){
+					if(arr[j][i]>=arr[k][i]){
+						doicho=arr[j][i];
+						arr[j][i]=arr[k][i];
+						arr[k][i]=doicho;
+					}
+
+				}
+			}
+		}
+	}
 
 	printArray(a, m, n);
 }
