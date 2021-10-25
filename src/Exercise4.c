@@ -135,6 +135,7 @@ int main(int argc, char *argv[]) {
 		}
 		Array2Dconverter(testcase,a,row,col);
 		insertCol(in_col,a,loc,row,col);
+		printArray(a,row,col+1);
 	}
 	else
 		printf("Invalid option!");
