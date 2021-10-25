@@ -61,7 +61,11 @@ void insertRow(int arr[], int a[SIZE][SIZE],int rowIndex, int m, int n){
 
 void removeRow(int a[SIZE][SIZE], int rowIndex, int m, int n){
 	//Your codes here
-	
+	for(int i=m-1;i>=rowIndex-1;i=i-1){
+		for(int j=0;j<=n-1;j++){
+			a[i+1][j]=a[i][j];
+		}
+	}
 }
 
 void insertCol(int arr[], int a[SIZE][SIZE],int colIndex, int m, int n){
@@ -102,8 +106,10 @@ int main(int argc, char *argv[]) {
 			testcase[i] = atoi(argv[i+5]);
 		}
 		Array2Dconverter(testcase,a,row,col);
-		if(choice == 2)
+		if(choice == 2){
 			removeRow(a,loc,row,col);
+			printArray(a,row-1,col);
+		}
 		else
 			removeCol(a,loc,row,col);
 
