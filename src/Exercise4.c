@@ -114,9 +114,10 @@ int main(int argc, char *argv[]) {
 			removeRow(a,loc,row,col);
 			printArray(a,row-1,col);
 		}
-		else
+		else{
 			removeCol(a,loc,row,col);
-
+			printArray(a,row-1,col);
+		}
 	}
 	else if(choice == 1){
 		int in_row[col],column;
