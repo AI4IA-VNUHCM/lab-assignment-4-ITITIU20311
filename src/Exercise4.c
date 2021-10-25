@@ -49,22 +49,45 @@ void printArray(int a[SIZE][SIZE], int m, int n)
 
 void insertRow(int arr[], int a[SIZE][SIZE],int rowIndex, int m, int n){
 	//Your codes here
-	
-}
+	for(int i=m-1;i>=rowIndex;i=i-1){
+		for(int j=0;j<=n-1;j++){
+			a[i+1][j]=a[i][j];
+		}
+	}
+	for(int i=0;i<=n-1;i++){
+		a[rowIndex][i]=arr[i];
+	}
+}	
 
 void removeRow(int a[SIZE][SIZE], int rowIndex, int m, int n){
 	//Your codes here
-	
+	for(int i=rowIndex;i<=m-1;i++){
+		for(int j=0;j<=n-1;j++){
+			a[i][j]=a[i+1][j];
+		}
+	}
 }
 
 void insertCol(int arr[], int a[SIZE][SIZE],int colIndex, int m, int n){
 	//Your codes here
+	for(int i=n-1;i>=colIndex;i=i-1){
+		for(int j=0;j<=m-1;j++){
+			a[j][i+1]=a[j][i];
+		}
+	}
+	for(int i=0;i<=m-1;i++){
+		a[i][colIndex]=arr[i];
+	}
 	
 }
 
 void removeCol(int a[SIZE][SIZE], int colIndex, int m, int n){
 	//Your codes here
-	
+	for(int i=colIndex;i<=n-1;i++){
+		for(int j=0;j<=m-1;j++){
+			a[j][i]=a[j][i+1];
+		}
+	}
 }
 
 int main(int argc, char *argv[]) {
@@ -87,11 +110,14 @@ int main(int argc, char *argv[]) {
 			testcase[i] = atoi(argv[i+5]);
 		}
 		Array2Dconverter(testcase,a,row,col);
-		if(choice == 2)
+		if(choice == 2){
 			removeRow(a,loc,row,col);
-		else
+			printArray(a,row-1,col);
+		}
+		else{
 			removeCol(a,loc,row,col);
-
+			printArray(a,row,col-1);
+		}
 	}
 	else if(choice == 1){
 		int in_row[col],column;
@@ -106,6 +132,7 @@ int main(int argc, char *argv[]) {
 		}
 		Array2Dconverter(testcase,a,row,col);
 		insertRow(in_row,a,loc,row,col);
+		printArray(a,row+1,col);
 	}
 	else if(choice == 3){
 		int in_col[row],r;
@@ -120,9 +147,9 @@ int main(int argc, char *argv[]) {
 		}
 		Array2Dconverter(testcase,a,row,col);
 		insertCol(in_col,a,loc,row,col);
+		printArray(a,row,col+1);
 	}
 	else
 		printf("Invalid option!");
-
 	return 0;
 }
