@@ -52,7 +52,7 @@ void printArray(int a[SIZE][SIZE], int m, int n)
 void Ex2(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
-	//Your codes here
+	for(int i=0;i<=)
 
 	printArray(a, m, n);
 }
