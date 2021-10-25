@@ -39,18 +39,18 @@ void Ex5(int arr[], int m, int n){
 	//Your codes here
 	int max,b[m],min;
 	for(int i=0; i<=m-1;i++){
-		max=a[i][0];
+		min=a[i][0];
 		for(int j=0; j<=n-2;j++){
-			if(a[i][j]>=a[i][j+1]) max = a[j][j+1];
+			if(a[i][j]<=a[i][j+1]) min = a[j][j+1];
 		}
-		b[i]=max;
+		b[i]=min;
 	}
 	for(int i=0;i<=m-2;i++){
 		if(b[i]>=b[i+1]){
-			min=b[i];
+			max=b[i];
 		}
 	}
-	printf("%d",min);
+	printf("%d",max);
 }
 
 int main(int argc, char *argv[]) {
