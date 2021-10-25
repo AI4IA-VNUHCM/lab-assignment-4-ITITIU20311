@@ -41,12 +41,12 @@ void Ex5(int arr[], int m, int n){
 	for(int i=0; i<=m-1;i++){
 		max=a[i][0];
 		for(int j=0; j<=n-2;j++){
-			if(a[i][j]<=a[i][j+1]) max = a[j][j+1];
+			if(a[i][j]>=a[i][j+1]) max = a[j][j+1];
 		}
 		b[i]=max;
 	}
 	for(int i=0;i<=m-2;i++){
-		if(b[i]<=b[i+1]){
+		if(b[i]>=b[i+1]){
 			min=b[i];
 		}
 	}
