@@ -83,7 +83,11 @@ void insertCol(int arr[], int a[SIZE][SIZE],int colIndex, int m, int n){
 
 void removeCol(int a[SIZE][SIZE], int colIndex, int m, int n){
 	//Your codes here
-	
+	for(int i=colIndex;i<=n-1;i++){
+		for(int j=0;j<=m-1;j++){
+			a[j][i]=a[j][i+1];
+		}
+	}
 }
 
 int main(int argc, char *argv[]) {
