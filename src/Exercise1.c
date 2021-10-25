@@ -41,7 +41,7 @@ void Ex1(int n){
 	for(int i=0; i<=n; i++){
 		for(int j=0;j<=i;j++){
 			pascal = tohop(i,j);
-			printf(" %d",pascal);
+			printf("%d ",pascal);
 		}
 		printf("\n");
 	}
