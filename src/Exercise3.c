@@ -51,7 +51,27 @@ void Ex3(int in_arr[], int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(in_arr,a,n,n);
 	//Your codes here
-	
+	int doicho;
+	for(int i=0;i<=n-2;i++){
+		for(int j=i+1;j<=n-1;j++){
+			if(a[j][j]<=a[i][i]){
+				doicho=a[i][i];
+				a[i][i]=a[j][j];
+				a[j][j]=doicho;
+
+			}
+		}
+	}
+	for(int i=0;i<=n-2;i++){
+		for(int j=i+1;j<=n-1;j++){
+			if(a[n-1-j][j]>=a[n-1-i][i]){
+				doicho=a[n-1-i][i];
+				a[n-1-i][i]=a[n-1-j][j];
+				a[n-1-j][j]=doicho;
+
+			}
+		}
+	}
 	printArray(a,n,n);
 }
 
