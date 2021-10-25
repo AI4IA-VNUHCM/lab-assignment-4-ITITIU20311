@@ -74,6 +74,7 @@ void insertCol(int arr[], int a[SIZE][SIZE],int colIndex, int m, int n){
 	for(int i=0;i<=m-1;i++){
 		a[i][colIndex]=arr[i];
 	}
+	
 }
 
 void removeCol(int a[SIZE][SIZE], int colIndex, int m, int n){
