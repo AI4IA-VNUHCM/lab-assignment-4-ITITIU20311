@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
 		}
 		else{
 			removeCol(a,loc,row,col);
-			printArray(a,row-1,col);
+			printArray(a,row,col-1);
 		}
 	}
 	else if(choice == 1){
